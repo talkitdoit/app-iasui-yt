@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUI Agentic IaC — TALKITDOIT</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #0a0a0f;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #e2e8f0 30%, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: left;
+    }
+
+    .card-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+
+    .card h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #06b6d4;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    .proof-box {
+      background: rgba(6, 182, 212, 0.08);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .proof-box h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #06b6d4;
+      margin-bottom: 1rem;
+    }
+
+    .proof-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.85rem;
+    }
+
+    .proof-row:last-child { border-bottom: none; }
+
+    .proof-label { color: #64748b; }
+
+    .proof-value {
+      color: #e2e8f0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.8rem;
+      max-width: 60%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .status-ok {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #22c55e;
+      font-weight: 600;
+    }
+
+    .footer {
+      font-size: 0.8rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .footer a {
+      color: #06b6d4;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="badge">🤖 Deployed by AI Agents</div>
+
+    <h1>Infrastructure as Code<br/>On-Chain</h1>
+
+    <p class="subtitle">
+      This page was provisioned by a team of AI agents using <strong>Pulumi Python</strong>,
+      authorised by <strong>SUI blockchain smart contracts</strong>, and
+      orchestrated by <strong>Microsoft Azure AI Foundry</strong>.
+      No human clicked "Deploy".
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">⛓️</div>
+        <h3>On-Chain Permission</h3>
+        <p>Every IaC action required a valid <code>InfraPermission</code> capability object on SUI devnet before Pulumi ran.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h3>3-Agent Team</h3>
+        <p>Planner → IaC Engineer → FinOps Auditor. Each agent has a distinct persona and skill set backed by Azure AI Foundry.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <h3>FinOps On-Chain</h3>
+        <p>Every action cost SUI MIST tokens. The entire audit trail — costs, timestamps, resources — lives immutably on SUI.</p>
+      </div>
+    </div>
+
+    <div class="proof-box">
+      <h3>⛓️ On-Chain Proof</h3>
+      <div class="proof-row">
+        <span class="proof-label">Network</span>
+        <span class="proof-value">SUI Devnet</span>
+      </div>
+      <div class="proof-row">
+        <span class="proof-label">Package</span>
+        <span class="proof-value" id="package-id">sui_iac::agent_permissions</span>
+      </div>
+      <div class="proof-row">
+        <span class="proof-label">IaC Actions Logged</span>
+        <span class="proof-value">3 ActionLog objects</span>
+      </div>
+      <div class="proof-row">
+        <span class="proof-label">Total SUI Cost</span>
+        <span class="proof-value">300 MIST (0.0000000003 SUI)</span>
+      </div>
+      <div class="proof-row">
+        <span class="proof-label">Azure Cost</span>
+        <span class="proof-value">$0.00 (Free Tier F1)</span>
+      </div>
+      <div class="proof-row">
+        <span class="proof-label">Compliance</span>
+        <span class="proof-value">
+          <span class="status-ok">✅ All actions authorised</span>
+        </span>
+      </div>
+    </div>
+
+    <p class="footer">
+      Built for <a href="https://www.youtube.com/@TALKITDOIT" target="_blank">TALKITDOIT</a> YouTube channel ·
+      SUI Blockchain + Microsoft Agent Framework + Pulumi + Azure ·
+      <a href="https://github.com/microsoft/agent-framework" target="_blank">Microsoft Agent Framework</a>
+    </p>
+
+  </div>
+</body>
+</html>
